@@ -17,3 +17,43 @@ vi. Employees can comment on other colleagues' article post.
 vii. Employees can view all articles, showing the most recently posted articles first.
 
 viii. Employees can view a specific article.
+
+# Getting Started
+To get started with this project you have to follow all instruction below carefully and implement.
+
+# Prerequisites
+Install the software on your local machine NodeJs
+
+## Installing
+Make sure you have cloned this repo to your local machine, and after then run cd project_directory command using your terminal. install all dependencies by this command below
+
+> npm i
+## Run the server
+> npm run dev
+## Run the test
+> npm test
+
+# Tools Used
+
+## Back End
+> Node Js
+
+## Framework
+> Express
+
+## User Interface (UI)
+
+- HTML
+- CSS
+- Javascript
+
+## Deployment
+> Heroku
+
+# Author
+> KAREKEZI Eric 
+> Email: eric.mico6@gmail.com
+ 
+# Copyright
+> Copyright (c) KAREKEZI Eric, Software developer, 2019
+
