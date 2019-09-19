@@ -1,0 +1,300 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background:rgba(248, 215, 153, 0.65);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    position: relative;
+}
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.nav-bar{
+    display: flex;
+    position: sticky;
+    top: 0;
+    flex: 1;
+    align-items: center;
+    width: 100%;
+    background: white;
+    box-shadow: 2px 1px 6px;
+    opacity: .98;
+    z-index: 888888;
+    height: 66px;
+}
+.footer{
+    background: white;
+    box-shadow: 1px 2px 6px;
+    text-align: center;
+    font-size: 20px;
+    height: 50px;
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    padding-top: 20px;
+}
+.logo{
+    margin: 0 20px;
+    position: absolute;
+    height: 60px;
+}
+.links{
+    margin: 0 10px 0 auto;
+}
+.links ul li{
+    display: inline-block;
+    padding: 10px 20px;
+}
+.links ul{
+    float: right;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+.show{
+    max-height: 100em;
+}
+.nav-bar .menu{
+    display: none;
+}
+.nav-bar .menu:hover{
+    color:  #4caf50;
+    transition: 0.5s;
+}
+
+.links li a{
+    color: rgb(221, 96, 50);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.links li a:hover{
+    color:  #4caf50;
+    border-radius: 5px;
+}
+
+.links button{
+    width: 230px;
+    border:white;
+    background: white;
+    color: rgb(221, 96, 50);
+    padding: 10px 40px;
+    cursor: pointer;
+    top: 10%;
+    font-size: 20px;
+}
+.links button:hover{
+    color:  #4caf50;
+    border-radius: 5px;
+}
+.create{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7) !important;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 888888;
+ }
+ .article{
+     position: relative;
+     width: 600px;
+     height: 600px;
+     background-color: rgb(245, 235, 221);
+     border-radius: 9px;
+     left: 30%;
+     top: 7%;
+ }
+ .show{
+     display: block;
+ }
+ .article h2{
+    font-size: 20px;
+    border-bottom: 2px solid #4caf50;
+    width: 480px;
+    margin-bottom: 50px;
+    padding: 13px 0;
+    position: absolute;
+    left: 3%;
+ }
+ .article .text-input{
+    border-radius: 3px;
+    position: absolute; 
+    width: 97%;
+    top: 7%;
+    left: 0.20rem;
+    font-size: 20px;
+}
+.article .text-input2{
+    border-radius: 3px;
+    position: absolute; 
+    width: 97%;
+    top: 55%;
+    left: 0.20rem;
+    font-size: 20px;
+}
+ .article label {
+     font-size: 20px;
+     color: #4caf50;
+     margin-bottom: 12px;
+     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ }
+ .article form{
+     position: absolute;
+     width: 80%;
+     top: 20%;
+     left: 8%;
+     height: 75%;
+ }
+
+ .article .btn {
+    position: absolute;
+    left: 13%;
+    width: 20%;
+    background:white;
+    border: 2px solid #4caf50;
+    border-radius: 15px;
+    color: black;
+    padding: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    top: 90%;
+}
+.article .btn:hover {
+    background: #4caf50;
+}
+.article .btn-btn:hover {
+    background: red;
+}
+
+.article .btn-btn {
+    position: absolute;
+    left: 65%;
+    width: 20%;
+    background:white;
+    border: 2px solid red;
+    border-radius: 15px;
+    color: black;
+    padding: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    top: 90%;
+
+}
+
+form div{
+    margin-bottom: 40px;
+}
+
+.page-wrapper{
+    height: 100%;
+    z-index: 88888;
+}
+.page-wrapper a{
+    text-decoration: none;
+    color: grey;
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.page-wrapper a:hover{
+    color: #4caf50;
+}
+
+.content{
+    width: 90%;
+    margin: 30px auto 30px;
+}
+.content .sidebar{
+    width: 25%;
+    height: 700px;
+    float: left;
+
+}
+
+.content .main-content{
+    width: 65%;
+    float: left;
+}
+.content .main-content.single{
+    padding: 20px 50px;
+    font-size: 1.1em;
+}
+.content .main-content.single .post-content p{
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.content .main-content.single .post-title{
+    text-align: center;
+    margin-right: 40px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #4caf50;
+}
+.content .popular{
+    margin-left: 10px;
+}
+.content .popular .post{
+    margin-top: 10px;
+    padding-top: 10px;
+
+}
+.content .popular .section-title{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #4caf50;
+    font-size: 30px;
+}
+
+.content .popular .post img{
+    height: 60px;
+    width: 70px;
+    float: left;
+    margin-right: 10px;
+}
+
+.content .main-content .post{
+    width: 95%;
+    height: 270px;
+    border-radius: 5px;
+    margin: 20px auto;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 1rem 1rem 1rem -1rem grey;
+
+}
+.content .main-content .post .post-image{
+    width: 40%;
+    height: 100%;
+    float: left;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.content .main-content .recent-post-title{
+    margin: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #4caf50;
+
+}
+.content .main-content .post .post-preview{
+    width: 57%;
+    padding: 10px;
+    float: right;
+}
+.content .main-content .post .post-preview .read-btn{
+    width: 9%;
+    border: 2px solid #4caf50;
+    border-radius: 15px;
+    color: black;
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+.content .main-content .post .post-preview .read-btn:hover{
+    background: #4caf50;
+}
