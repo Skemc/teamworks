@@ -73,7 +73,7 @@ p a{
 
 
 @media (max-width:770px){
-    @media(max-height:1025px){
+    
         .info{
             width: 100%;
             margin: 30px auto;
@@ -98,28 +98,16 @@ p a{
         p{
             text-align: center;
         }
-    }
+    
 }
-    @media(max-width:460px){
-        .info{
-            width: 85%;
-            margin: 50px auto;
-            height: 580px;
+ 
+    @media(max-width:425px){
+        .signup-box .info{
+            width: 100%;
+            max-width: 230px;
+            margin-left:90px;
+           
         }
-        .form input{
-            padding: 9px;
-            margin: 4px;
-        }
-        .form select{
-            padding: 9px;
-            margin: 4px;
-        }
-        .info button{
-            width: 97%;
-            margin: 10px 3px;
-        }
-    }
-    @media(max-width:415px){
         .info{
             width: 80%;
             margin: 50px auto;
@@ -138,22 +126,4 @@ p a{
             margin: 10px 3px;
         }
     }
-    @media(max-width:328px){
-        .info{
-            width: 75%;
-            margin: 50px auto;
-            height: 620px;
-        }
-        .form input{
-            padding: 9px;
-            margin: 4px;
-        }
-        .form select{
-            padding: 9px;
-            margin: 4px;
-        }
-        .info button{
-            width: 95%;
-            margin: 10px 3px;
-        }
-    }
+ 
