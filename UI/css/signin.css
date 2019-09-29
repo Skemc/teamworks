@@ -10,7 +10,7 @@ body{
 
 }
 .signin-box{
-    width: 370px;
+    width: 300px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -18,7 +18,7 @@ body{
     color: black;
     background: rgba(255, 255, 255, 0.664);
     border-radius: 10px;
-    padding: 10px;
+    padding: 50px;
     margin: 40px auto;
     
 }
@@ -30,11 +30,12 @@ body{
     padding: 13px 0;
 }
 .textbox{
-    width: 100%;
+    background: 1px solid red;
+    width: 90%;
     overflow: hidden;
     font-size: 20px;
-    padding: 8px 0;
-    margin: 8px 0;
+    padding: 8px 0px;
+    margin: 8px;
     border-bottom: 1px solid #4caf50;
     color: white;
 }
@@ -67,90 +68,43 @@ body{
 p{
     text-align: center;
     color: black;
-    font-size: 20px;
+    font-size: 19px;
 }
 p a{
     color: black;
     font-weight: bolder;
 }
 
-@media(max-width: 675px){
+/* Responsiveness */
+
+/* Tablet */
+
+@media(max-width:768px){
     .signin-box{
+        width: 70%;
+        margin: 30px 0px 30px 0px;
+        font-size: 20px;
+        transform: translate(-50%,-50%);
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width:425px){
+    .signin-box, select {
+        width: 70%;
+        margin: 30px 0px 30px 0px;
         transform: translate(-50%,-50%);
     }
 }
-@media(min-width:2560px){
-    .signin-box button{
-        width: 93%;
-    }
+ 
+/* Large Screen */
+
+ @media(min-width:2560px){ 
     .signin-box{
+        width: 100%;
+        margin: 50px 0px 50px 0px;
         transform: translate(-50%,-50%);
     }
-}
-@media (max-width:960px){
-    .signin-box{
-        width: 85%;
-        margin: 0 auto;
-        font-size: 15px;
-        transform: translate(-50%,-50%);
-    }
-}
-@media (max-width:770px){
-    @media(max-height:1025px){
-        .signin-box{
-            width: 85%;
-            margin: 0 auto;
-            font-size: 15px;
-            transform: translate(-50%,-50%);
-        }
-        .signin-box button{
-            width: 94%;
-        }
-        .textbox{
-            margin: 0;
-        }
-        .textbox input,select{
-            padding: 10px;
-            margin: 6px;
-        }
-        .textbox select{
-            padding: 10px;
-            margin: 6px;
-        }
-        .signin-box button{
-            padding: 10px;
-            margin: 6px; 
-        }
-        p{
-            text-align: center;
-        }
-    }
-}
-    @media(max-width:430px){
-        .signin-box{
-            width: 85%;
-            margin: 50px auto;
-            height: 410px;
-            transform: translate(-50%,-50%);
-        }
-        .textbox input{
-            padding: 9px;
-            margin: 4px;
-        }
-        .textbox select{
-            padding: 9px;
-            margin: 4px;
-        }
-        .signin-box button{
-            width: 97%;
-            margin: 10px 3px;
-        }
-    }
-    @media(max-width:321px){
-        .signin-box{
-            width: 85%;
-            margin: 50px auto;
-            height: 430px;
-            transform: translate(-50%,-50%);
-        }
-    }
+} 
