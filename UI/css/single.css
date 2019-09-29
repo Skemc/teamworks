@@ -167,9 +167,11 @@ body{
 }
 .article .btn:hover {
     background: #4caf50;
+    color: white;
 }
 .article .btn-btn:hover {
     background: red;
+    color: white;
 }
 
 .article .btn-btn {
@@ -184,6 +186,8 @@ body{
     font-size: 18px;
     cursor: pointer;
     top: 90%;
+    text-decoration: none;
+    text-align: center;
 
 }
 
@@ -297,4 +301,75 @@ form div{
 }
 .content .main-content .post .post-preview .read-btn:hover{
     background: #4caf50;
+}
+
+
+/* Responsiveness */
+
+/* Mobile */
+
+@media(max-width:425px){
+    .content .main-content.single .post-title{
+        text-align: center;
+        margin-right: 15px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: #4caf50;
+        font-size: 30px;
+        width: 100%;
+    }
+    .content .main-content.single .post-content p{
+        font-size: 18px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+   
+    .content .sidebar{
+        width: 100%;
+        height: 700px;
+        float: left;
+    }
+    .article{
+        border: 5px solid red;
+        position: absolute;
+        width: 7%;
+        height: 60px;
+        background-color: rgb(245, 235, 221);
+        border-radius: 9px;
+        left: 23%;
+        top: 7%;
+    }
+   
+}
+
+/* Tablet */
+
+@media(max-width:768px){
+    .content .main-content.single .post-title{
+        text-align: center;
+        margin-left: 50px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: #4caf50;
+        font-size: 33px;
+        width: 100%;
+    }
+    .content .main-content.single .post-content p{
+        font-size: 23px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        width: 100%;
+    }
+   
+    .content .sidebar{
+        width: 100%;
+        height: 700px;
+        float: left;
+    }
+    .article{
+        position: relative;
+        width: 600px;
+        height: 600px;
+        background-color: rgb(245, 235, 221);
+        border-radius: 9px;
+        left: 13%;
+        top: 7%;
+    }
+   
 }
