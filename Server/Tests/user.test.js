@@ -6,7 +6,7 @@ chai.should();
 
 
 
-describe("Authentication tests", () => {
+describe("Signup tests", () => {
 
   it("User should be able to signup when data are valid ", (done) => {
     chai.request(app).post("/api/v1/auth/signup").send({
@@ -174,10 +174,58 @@ describe("Authentication tests", () => {
       done();
     });
   });
-
- 
-
- 
-
 });
 
+describe('Signin tests', () => {
+
+  it("should be able to signin", (done) => {
+    chai.request(app).post("/api/v1/auth/signin").send({
+      email : "eric6@gmail.com",
+      password : "Rwanda000"
+    }).end((err, res) => {
+      res.should.have.status(200);
+      res.body.should.be.an("object");
+      done();
+    });
+  });
+  it("should not be able to signin with wrong password ", (done) => {
+    chai.request(app).post("/api/v1/auth/signin").send({
+      email : "eric6@gmail.com",
+      password : "Rwanda0000"
+    }).end((err, res) => {
+      res.should.have.status(401);
+      res.body.should.be.an("object");
+      done();
+    });
+  });
+  it("should not be able to signin with invalid email", (done) => {
+    chai.request(app).post("/api/v1/auth/signin").send({
+        email: 'eric6.com',
+        password: 'Rwanda000'
+    }).end((err, res) => {
+      res.should.have.status(401);
+      res.body.should.be.an("object");
+      done();
+    });
+  });
+  it("should not be able to signin with invalid password", (done) => {
+    chai.request(app).post("/api/v1/auth/signin").send({
+        email: 'fdgdfgf@gmail.com',
+        password: 'Kiga'
+    }).end((err, res) => {
+      res.should.have.status(401);
+      res.body.should.be.an("object");
+      done();
+    });
+  });
+  it("should not be able to signin with an unknown account", (done) => {
+    chai.request(app).post("/api/v1/auth/signin").send({
+        email: 'eric123@gmail.com',
+        password: 'Rwanda000'
+    }).end((err, res) => {
+      res.should.have.status(401);
+      res.body.should.be.an("object");
+      done();
+    });
+  });
+});

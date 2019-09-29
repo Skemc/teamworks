@@ -22,5 +22,15 @@ class userValidation {
             return res.status(400).send({ status: 400, error: err.message });
         }
     }
+    static validateSignin(req, res, next) {
+        try {
+            if (!(req.body.email) || !email.test(req.body.email)) throw new Error("Invalid email");
+            if (!(req.body.password) || !password.test(req.body.password)) throw new Error("Invalid password");
+            next();
+
+        } catch (error) {
+            return res.status(401).send({ status: 401, error: error.message})
+        }
+    }
 }
 export default userValidation;

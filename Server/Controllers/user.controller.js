@@ -42,6 +42,34 @@ class UserController {
             data: token
         })
     }
+    static signin(req, res) {
+        const isUserExist = users.find(user => user.email === req.body.email);
+        if (!isUserExist) {
+            return res.status(401).send({
+                status: 401,
+                message: "user dont exist"
+            });
+        } else {
+            const isPassword = bcrypt.compareSync(req.body.password, isUserExist.password);
+            if(isPassword) {
+                const token = jwt.sign({
+                    id: isUserExist.id,
+                    email: isUserExist.email,
+                    isadmin: isUserExist.isAdmin
+                }, process.env.secretKey);
+    
+                res.status(200).send({
+                    status: 200,
+                    message: "User is successfully logged in",
+                    data: token
+                });
+            } 
+             else return res.status(401).send({
+                status: 401,
+                message: "Incorrect password"
+            });
+        }
+    }
 }
 
 export default UserController;
