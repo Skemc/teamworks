@@ -77,19 +77,21 @@ body{
     border-radius: 5px;
 }
 
-.links button{
+ button{
     width: 230px;
-    border:white;
-    background: white;
-    color: rgb(221, 96, 50);
+    position: fixed;
+    background: rgb(238, 163, 136);
     padding: 10px 40px;
     cursor: pointer;
     top: 10%;
+    right: 1%;
     font-size: 20px;
+    z-index: 888888;
 }
-.links button:hover{
-    color:  #4caf50;
+button:hover{
+    background:  #4caf50;
     border-radius: 5px;
+    color: white;
 }
 .create{
     width: 100%;
@@ -195,9 +197,7 @@ body{
 form div{
     margin-bottom: 40px;
 }
-form div textarea{
-    
-}
+
 
 .page-wrapper{
     height: 100%;
@@ -221,24 +221,9 @@ form div textarea{
     margin: 5px;
 }
 
-.post-slider .next{
-    position: absolute;
-    top: 14%;
-    right: 30px;
-    font-size: 2em;
-    color: #4caf50;
-    cursor: pointer;
-}
-.post-slider .prev{
-    position: absolute;
-    top: 14%;
-    left: 30px;
-    font-size: 2em;
-    color: #4caf50;
-    cursor: pointer;
-}
+
 .post-slider .post-wrapper{
-    width: 84%;
+    width: 75%;
     height: 400px;
     margin: 0px auto;
     overflow: hidden;
@@ -319,21 +304,32 @@ form div textarea{
     background: #4caf50;
 }
 
+
 /* Responsivess */
 
 /* Tablet */
 
 @media(max-width:768px){
-    .post-slider .next{
-        position: absolute;
-        top: 10%;
-    } 
-    .post-slider .prev{
-        position: absolute;
-        top: 10%;
-    } 
+
+    .post-slider .post-wrapper{
+        width: 85%;
+        height: 1500px;
+    }
+    .post-slider .post-wrapper .post{
+        margin-bottom: 40px;
+        margin-left: 80px;
+        width: 500px;
+        height: 470px;
+    
+    }
+    .post-slider .post-wrapper .post .slider-image{
+        width: 100%;
+        height: 320px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
     .post-slider .post-wrapper .post .post-info{
-        height: 117px;
+        height: 200px;
         padding: 0px 5px;
     }
     .post-slider .post-wrapper .post .post-info h4{
@@ -380,6 +376,15 @@ form div textarea{
 
 @media(max-width:425px){
 
+    .post-slider .post-wrapper{
+        width: 85%;
+    }
+    .post-slider .post-wrapper .post{
+        margin-left: 15px;
+        width: 100%;
+    }
+
+
     .nav-bar{
         position: relative;
     }
@@ -405,16 +410,6 @@ form div textarea{
         color: #4caf50;
     }
 
-    .post-slider .next{
-        position: absolute;
-        top: 14%;
-        right: 4px;
-    } 
-    .post-slider .prev{
-        position: absolute;
-        top: 14%;
-        left: 4px;
-    } 
     .content .main-content{
         width: 100%;
         float: left;
