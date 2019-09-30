@@ -23,11 +23,9 @@ header ul{
     padding: 0px;
     list-style: none;
 }
-.show{
-    max-height: 100em;
-}
 header .menu{
     display: none;
+    
 }
 header .menu:hover{
     color:  #4caf50;
