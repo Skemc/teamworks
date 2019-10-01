@@ -25,7 +25,19 @@ header ul{
 }
 header .menu{
     display: none;
-    
+}
+.side-menu{
+    display: none;
+}
+.side-menu ul{
+    list-style: none;
+}
+.side-menu ul li a{
+    color: rgb(221, 96, 50);
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
 }
 header .menu:hover{
     color:  #4caf50;
@@ -102,6 +114,22 @@ footer p{
     bottom: 0;
     height: 40px;
   }
+  #btn-close{
+    color: red;
+    font-size: 35px;
+    margin-bottom:10px;
+    position: absolute;
+    right: 5px;
+    text-decoration: none;
+    
+}
+#side-menu{
+    position: absolute;
+    width: 100%;
+    background: #fff;
+    display: none;
+
+}
 
 /* Responsiveness */
 
@@ -122,6 +150,7 @@ footer p{
         background: white;
         max-height: 0px;
         overflow: hidden;
+        display: block;
     }
     header ul li {
         width: 100%;
@@ -148,7 +177,7 @@ footer p{
         font-weight: bolder;
         transform: translate(5%);    
         top: 47%;
-        left: 0.01em;
+        left: 0.01em !important;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     }
     .home .slog{
@@ -160,7 +189,7 @@ footer p{
         font-style: oblique;
         transform: translate(7%);
         top: 53%;
-        left: 0.1px;
+        left: 0px !important;
         position: absolute;
     }
     
