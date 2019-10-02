@@ -20,10 +20,6 @@
 
         <div class="links">
             <ul>
-                
-                
-                 
-
                 <li>
                     <a href="/UI/index.html">Sign Out</a>
                 </li>
@@ -35,7 +31,7 @@
 
     </nav>
 
-    <button class="create-btn">Create Article</button>
+    <button class="create-btn" onclick="show()"><i class="fas fa-pencil-alt write"></i></button>
 
     <!-- creation of Article  -->
 
@@ -53,12 +49,12 @@
 
 
                 <div>
-                    <label> Body</label>
-                    <textarea name="body" id="body" class="body"></textarea>
+                    <label> Body</label><br>
+                    <textarea name="body" id="body" class="body-article" rows="10" cols="65"></textarea>
                 </div>
 
                 <div>
-                    <label>Image</label>
+                    <label>Image</label><br>
                     <input type="file" name="image" class="text-input2">
                 </div>
 
@@ -87,7 +83,7 @@
         <div class="content clearfix">
             <div class="main-content single">
                 <h1 class="post-title">How to over-come your fears</h1>
-                <i class="fas fa-ellipsis-h more"></i>
+                
 
                 <div class="post-content">
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat libero delectus maiores

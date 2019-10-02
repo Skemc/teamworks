@@ -2,7 +2,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background:rgba(248, 215, 153, 0.65);
+    background:#fff;
     background-size: cover;
     background-position: center;
     height: 100%;
@@ -26,17 +26,28 @@ body{
     z-index: 888888;
     height: 66px;
 }
-.footer{
-    background: white;
-    box-shadow: 1px 2px 6px;
-    text-align: center;
-    font-size: 20px;
-    height: 50px;
-    position: absolute;
+footer{
+    position: relative;
     width: 100%;
-    left: 0px;
-    padding-top: 20px;
-}
+    bottom: 0;
+    height: 40px;
+    overflow: hidden;
+  }
+.footer{
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    height: 40px;
+    background: rgb(221, 96, 50);
+  }
+footer p{
+    text-align: center;
+    padding: 20px ;
+    margin: 0px;
+    height: 40px;
+
+  }
+ 
 .logo{
     margin: 0 20px;
     position: absolute;
@@ -51,10 +62,7 @@ body{
     padding: 0px;
     list-style: none;
 }
-.show{
-    display: block;
-    /* max-height: 100em; */
-}
+
 .nav-bar .menu{
     display: none;
 }
@@ -76,49 +84,54 @@ body{
     color:  #4caf50;
     border-radius: 5px;
 }
+.create-btn .write{
+    font-size: 40px;
+    text-decoration: none;
 
+}
  button{
-    width: 230px;
     position: fixed;
-    background: rgb(238, 163, 136);
-    padding: 10px 40px;
+    background: #fff;
+    padding: 20px;
     cursor: pointer;
     top: 10%;
     right: 1%;
     font-size: 20px;
     z-index: 888888;
+    margin: 4px 2px;
+    border-radius: 50%;
+    border: solid rgb(221, 96, 50);
+    text-decoration: none;
+    text-align: center;
 }
 button:hover{
-    background:  #4caf50;
-    border-radius: 5px;
-    color: white;
+    background:  rgb(221, 96, 50);
 }
 .create{
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.7) !important;
-    position: absolute;
+    position: fixed;
     top: 0;
     display: none;
     justify-content: center;
     align-items: center;
     z-index: 888888;
  }
+
  .article{
      position: relative;
      width: 600px;
      height: 600px;
-     background-color: rgb(245, 235, 221);
+     background-color: #fff;
      border-radius: 9px;
      left: 30%;
-     top: 7%;
+     top: 12%;
  }
- .show{
-     display: block;
- }
+
  .article h2{
     font-size: 20px;
-    border-bottom: 2px solid #4caf50;
+    border-bottom: 2px solid rgb(221, 96, 50);
     width: 480px;
     margin-bottom: 50px;
     padding: 13px 0;
@@ -135,7 +148,6 @@ button:hover{
 }
 .article .text-input2{
     border-radius: 3px;
-    position: absolute; 
     width: 97%;
     top: 55%;
     left: 0.20rem;
@@ -143,7 +155,7 @@ button:hover{
 }
  .article label {
      font-size: 20px;
-     color: #4caf50;
+     color: rgb(221, 96, 50);
      margin-bottom: 12px;
      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
  }
@@ -160,7 +172,7 @@ button:hover{
     left: 13%;
     width: 20%;
     background:white;
-    border: 2px solid #4caf50;
+    border: 2px solid rgb(221, 96, 50);
     border-radius: 15px;
     color: black;
     padding: 5px;
@@ -169,7 +181,7 @@ button:hover{
     top: 90%;
 }
 .article .btn:hover {
-    background: #4caf50;
+    background: rgb(221, 96, 50);
     color: white;
 }
 .article .btn-btn:hover {
@@ -200,7 +212,7 @@ form div{
 
 
 .page-wrapper{
-    height: 100%;
+    height: 1500px;
     z-index: 88888;
 }
 .page-wrapper a{
@@ -210,24 +222,27 @@ form div{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .page-wrapper a:hover{
-    color: #4caf50;
+    color: rgb(221, 96, 50);
 }
 
 .post-slider .slider-title{
     text-align: center;
     margin: 30px auto; 
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #4caf50;
+    color: black;
     margin: 5px;
 }
-
+.post-slider{
+    height: 500px;
+}
 
 .post-slider .post-wrapper{
-    width: 75%;
-    height: 400px;
+    width: 73%;
+    height: 450px;
     margin: 0px auto;
     overflow: hidden;
     padding: 10px 0px 10px 0px;
+    
 }
 .post-slider .post-wrapper .post{
     display: inline-block;
@@ -236,6 +251,7 @@ form div{
     margin: 0px 10px;
     border-radius: 5px;
     box-shadow: 1rem 1rem 1rem -1rem grey;
+
 }
 .post-slider .post-wrapper .post .post-info{
     height: 120px;
@@ -257,7 +273,7 @@ form div{
 .content .main-content{
     width: 80%;
     float: left;
-
+    
 }
 
 .content .main-content .post{
@@ -280,7 +296,7 @@ form div{
 .content .main-content .recent-post-title{
     margin: 20px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #4caf50;
+    color: black;
 
 }
 .content .main-content .post .post-preview{
@@ -290,8 +306,8 @@ form div{
 }
 .content .main-content .post .post-preview .read-btn{
     width: 9%;
-    border: 2px solid #4caf50;
-    border-radius: 15px;
+    border: 2px solid rgb(221, 96, 50);
+    border-radius: 5px;
     color: black;
     padding: 5px;
     font-size: 20px;
@@ -299,9 +315,75 @@ form div{
     position: absolute;
     bottom: 10px;
     right: 10px;
+    text-align: center;
+    
 }
 .content .main-content .post .post-preview .read-btn:hover{
-    background: #4caf50;
+    background: rgb(221, 96, 50);
+    color: white;
+}
+.post-slider .post-wrapper .post .post-info .more{
+    float: left;
+    position: absolute; 
+    font-size: 20px;
+    margin: 5px;
+}
+.post-slider .post-wrapper .post .more-icon{
+    position: absolute;
+    width: 330px;
+    height: 120px;;
+    background: #fff;
+    border-radius: 9px;
+    display: none;
+    margin: 15px;
+    margin-top: auto;
+    box-shadow: 1rem 1rem 1rem -1rem grey;
+
+}
+.post-slider .post-wrapper .post .more-icon2{
+    position: absolute;
+    width: 330px;
+    height: 120px;;
+    background: #fff;
+    border-radius: 9px;
+    display: none;
+    margin: 15px;
+    margin-top: auto;
+    box-shadow: 1rem 1rem 1rem -1rem grey;
+
+}
+.post-slider .post-wrapper .post .more-icon3{
+    position: absolute;
+    width: 330px;
+    height: 120px;;
+    background: #fff;
+    border-radius: 9px;
+    display: none;
+    margin: 15px;
+    margin-top: auto;
+    box-shadow: 1rem 1rem 1rem -1rem grey;
+
+}
+
+
+#icon{
+    text-decoration: none;
+    list-style: none;
+}
+#btn-close{
+    color: red;
+    font-size: 35px;
+    margin-bottom:10px;
+    position: absolute;
+    right: 5px;
+}
+#edit{
+    color: blue;
+    font-size: 30px;
+}
+#delete{
+    color: red;
+    font-size: 30px;
 }
 
 
@@ -310,16 +392,21 @@ form div{
 /* Tablet */
 
 @media(max-width:768px){
-
+    html, body{
+        height: auto;
+    }
+    .post-slider{
+        height: auto;
+    }
     .post-slider .post-wrapper{
         width: 85%;
-        height: 1500px;
+        height: auto;
     }
     .post-slider .post-wrapper .post{
         margin-bottom: 40px;
         margin-left: 80px;
         width: 500px;
-        height: 470px;
+        height: auto;
     
     }
     .post-slider .post-wrapper .post .slider-image{
@@ -329,7 +416,7 @@ form div{
         border-top-right-radius: 5px;
     }
     .post-slider .post-wrapper .post .post-info{
-        height: 200px;
+        height: 100px;
         padding: 0px 5px;
     }
     .post-slider .post-wrapper .post .post-info h4{
@@ -347,7 +434,7 @@ form div{
     }
     .content .main-content .post .post-preview .read-btn{
         width: 14%;
-        border: 2px solid #4caf50;
+        border: 2px solid rgb(221, 96, 50);
         border-radius: 15px;
         color: black;
         padding: 5px;
@@ -358,18 +445,19 @@ form div{
         right: 10px;
     }
     .content .main-content .post .post-preview .read-btn:hover{
-        background: #4caf50;
+        background: rgb(221, 96, 50);
+        color: white;
     }
     .article{
         position: relative;
         width: 600px;
         height: 600px;
-        background-color: rgb(245, 235, 221);
+        background-color: #fff;
         border-radius: 9px;
         left: 12%;
-        top: 5%;
+        top: 12%;
     }
-   
+
 }
 
 /* Mobile */
@@ -383,33 +471,6 @@ form div{
         margin-left: 15px;
         width: 100%;
     }
-
-
-    .nav-bar{
-        position: relative;
-    }
-    .nav-bar ul {
-        width: 100%;
-        background: white;
-        max-height: 0px;
-        overflow: hidden;
-        z-index: 888888;
-    }
-
-    .nav-bar .menu{
-        display: block;
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        font-size: 1.9em;
-        color: rgb(221, 96, 50);
-        /* z-index: 888888; */
-    }
-    .nav-bar .menu:hover{
-        transition-delay: 0.5s;
-        color: #4caf50;
-    }
-
     .content .main-content{
         width: 100%;
         float: left;
@@ -424,7 +485,7 @@ form div{
     }
     .content .main-content .post .post-preview .read-btn{
         width: 29%;
-        border: 2px solid #4caf50;
+        border: 2px solid rgb(221, 96, 50);
         border-radius: 15px;
         color: black;
         padding: 5px;
@@ -435,9 +496,70 @@ form div{
         right: 3px;
     }
     .content .main-content .post .post-preview .read-btn:hover{
-        background: #4caf50;
+        background: rgb(221, 96, 50);
+        color: white;
     }
     .content .main-content .post .post-preview .preview-text{
         font-size: 14px;
     }
+    .article{
+        position: relative;
+        width: 330px;
+        height: 600px;
+        background-color: #fff;
+        border-radius: 9px;
+        left: 12%;
+        top: 12%;
+    }
+   #body{
+       width: 100%;
+   } 
+   .article .btn {
+    position: absolute;
+    left: 5%;
+    width: 40%;
+    background:white;
+    border: 2px solid rgb(221, 96, 50);
+    border-radius: 15px;
+    color: black;
+    padding: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    top: 90%;
+    }
+    .article .btn:hover {
+        background: rgb(221, 96, 50);
+        color: white;
+    }
+    .article .btn-btn:hover {
+        background: red;
+        color: white;
+    }
+
+    .article .btn-btn {
+        position: absolute;
+        right: 2px;
+        width: 27%;
+        background:white;
+        border: 2px solid red;
+        border-radius: 15px;
+        color: black;
+        padding: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        top: 90%;
+        text-decoration: none;
+        text-align: center;
+
+    }
+    .article h2{
+        font-size: 20px;
+        border-bottom: 2px solid rgb(221, 96, 50);
+        width: 300px;
+        margin-bottom: 50px;
+        padding: 13px 0;
+        position: absolute;
+        left: 3%;
+    }
+
 }

@@ -1,32 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/dashboard.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" 
-    integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9" 
-    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+        integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9" crossorigin="anonymous">
     <title>dashboard</title>
 </head>
+
 <body>
     <nav class="nav-bar">
-        
+
         <div class="logo">
             <img src="../assets/logo.jpg" alt style="height: 60px">
         </div>
-
         <div class="links">
-
-                <i class="fa fa-bars menu"></i>
-
+            <i class="fa fa-bars menu"></i>
             <ul class="nav">
-                
-                
-
                 <li>
-                 <a href="/UI/index.html">Sign Out</a>
+                    <a href="/UI/index.html">Sign Out</a>
                 </li>
             </ul>
         </div>
@@ -35,53 +30,50 @@
     <!-- creation of Article  -->
 
     <div class="create" id="overlay">
-         
+
         <div class="article">
 
-             <h2> Create Article</h2>
-            
-             <form action="article" method="post">
+            <h2> Create Article</h2>
+
+            <form action="article" method="post">
                 <div>
                     <label> Title</label>
                     <input type="text" name="title" id="" class="text-input">
                 </div>
-
-
                 <div>
-                    <label> Body</label>
-                    <textarea name="body" id="body" class="body" ></textarea>
+                    <label> Body</label><br>
+                    <textarea name="body" id="body" class="body-article" rows="10" cols="65"></textarea>
                 </div>
-
-                <div>
-                    <label>Image</label>
+                <div id="file">
+                    <label>Image</label><br>
                     <input type="file" name="image" class="text-input2">
                 </div>
-
                 <div>
                     <button type="submit" class="btn">Add Post</button>
                 </div>
 
-                
-                <a href="dashboard.html" class="btn-btn" title="Cancel"><h8>Cancel</h8> </a>
 
-            
-               
-             </form>
-        </div>     
+                <a href="dashboard.html" class="btn-btn" title="Cancel">
+                    <h8>Cancel</h8>
+                </a>
+
+
+
+            </form>
+        </div>
 
     </div>
-    
+
     <!-- End of Creation of Article -->
 
     <!-- Page wrapper -->
-    <button class="create-btn" >Create Article</button>
+    <button class="create-btn" onclick="show()"><i class="fas fa-pencil-alt write"></i></button>
     <div class="page-wrapper">
 
         <!-- Horrizontal Carousel -->
 
         <div class="post-slider">
-            <h1 class="slider-title">Trending Post</h1>
-
+            <h1 class="slider-title">My Posts</h1>
             <div class="post-wrapper">
                 <div class="post">
                     <img src="../assets/art1.jpg" alt="" class="slider-image">
@@ -90,6 +82,29 @@
                         <i class="fas fa-user"> John Lee</i>
                         &nbsp;
                         <i class="fas fa-calendar"> Sep 9, 2019</i>
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        <i class="fas fa-ellipsis-h more" onclick="showMore()"></i>
+
+                    </div>
+                    <div class="more-icon">
+                        <a href="" id="btn-close" onclick="closeMore()">&times;</a>
+                        <ul id="icon">
+                            <li>
+                                <a href="" id="edit">Edit</a>
+                            </li>
+                            <li>
+                                <a href="" id="delete">Delete</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
@@ -100,6 +115,28 @@
                         <i class="fas fa-user"> John Lee</i>
                         &nbsp;
                         <i class="fas fa-calendar"> Sep 9, 2019</i>
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        <i class="fas fa-ellipsis-h more" onclick="showMore2()"></i>
+                    </div>
+                    <div class="more-icon2">
+                        <a href="" id="btn-close" onclick="closeMore()">&times;</a>
+                        <ul id="icon">
+                            <li>
+                                <a href="" id="edit">Edit</a>
+                            </li>
+                            <li>
+                                <a href="" id="delete">Delete</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
@@ -110,14 +147,36 @@
                         <i class="fas fa-user"> John Lee</i>
                         &nbsp;
                         <i class="fas fa-calendar"> Sep 9, 2019</i>
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        <i class="fas fa-ellipsis-h more" onclick="showMore3()"></i>
+                    </div>
+                    <div class="more-icon3">
+                        <a href=""  id="btn-close" onclick="closeMore()">&times;</a>
+                        <ul id="icon">
+                            <li>
+                                <a href="" id="edit">Edit</a>
+                            </li>
+                            <li>
+                                <a href="" id="delete">Delete</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                
+
             </div>
         </div>
 
         <!-- End of Horrizontal Carousel -->
-       
+
         <!--Other posts  -->
 
         <div class="content clearfix">
@@ -132,10 +191,10 @@
                         &nbsp;
                         <i class="fas fa-calendar"> Sep 9, 2019</i>
                         <p class="preview-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             Ipsum voluptatibus, ut eos nulla explicabo officia.
                         </p>
-                        <a href="single.html" class="read-btn">Read More</a>
+                        <a href="single.html" class="read-btn">More...</a>
                     </div>
                 </div>
 
@@ -147,10 +206,10 @@
                         &nbsp;
                         <i class="fas fa-calendar"> Sep 9, 2019</i>
                         <p class="preview-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             Ipsum voluptatibus, ut eos nulla explicabo officia.
                         </p>
-                        <a href="single.html" class="read-btn">Read More</a>
+                        <a href="single.html" class="read-btn">More...</a>
                     </div>
                 </div>
 
@@ -162,10 +221,10 @@
                         &nbsp;
                         <i class="fas fa-calendar"> Sep 9, 2019</i>
                         <p class="preview-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             Ipsum voluptatibus, ut eos nulla explicabo officia.
                         </p>
-                        <a href="single.html" class="read-btn">Read More</a>
+                        <a href="single.html" class="read-btn">More...</a>
                     </div>
                 </div>
 
@@ -177,10 +236,10 @@
                         &nbsp;
                         <i class="fas fa-calendar"> Sep 9, 2019</i>
                         <p class="preview-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             Ipsum voluptatibus, ut eos nulla explicabo officia.
                         </p>
-                        <a href="single.html" class="read-btn">Read More</a>
+                        <a href="single.html" class="read-btn">More...</a>
                     </div>
                 </div>
 
@@ -192,13 +251,17 @@
                         &nbsp;
                         <i class="fas fa-calendar"> Sep 9, 2019</i>
                         <p class="preview-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             Ipsum voluptatibus, ut eos nulla explicabo officia.
                         </p>
-                        <a href="single.html" class="read-btn">Read More</a>
+                        <a href="single.html" class="read-btn">More...</a>
                     </div>
                 </div>
 
+
+            </div>
+
+            <div class="side-bar">
 
             </div>
 
@@ -208,17 +271,21 @@
         <!--Other posts  -->
 
     </div>
-    
+
     <!-- End of Page wrapper -->
 
-    <div class="footer">
-         Copyright &copy; 2019 Teamwork
-    </div>
+    <footer class="footer">
+
+            <P>
+                Copyright &copy; 2019 Teamwork
+            </P>
+    
+    </footer>
 
 
-   
+
     <script src="../script/scripts.js"></script>
 
 </body>
-</html>
 
+</html>
