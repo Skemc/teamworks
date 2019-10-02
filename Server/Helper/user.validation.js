@@ -29,7 +29,7 @@ class userValidation {
             next();
 
         } catch (error) {
-            return res.status(401).send({ status: 401, error: error.message})
+            return res.status(401).send({ status: 401, error: error.message});
         }
     }
 }
