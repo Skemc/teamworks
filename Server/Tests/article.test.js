@@ -132,4 +132,31 @@ describe("articles tests", () => {
       done();
     });
   });
+  it("User should be able to delete article", (done) => {
+    chai.request(app).delete(`/api/v1/articles/${1}`)
+    .set('auth', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJlcmljNkBnbWFpbC5jb20iLCJpc2FkbWluIjpmYWxzZSwiaWF0IjoxNTY5OTY0OTkzfQ.NdgiZycbMVgp7NKADgaUJMwJhXOl7wFeLSCb_RLitkg')
+    .end((err, res) => {
+      res.should.have.status(200);
+      res.body.should.be.an("object");
+      done();
+    });
+  });
+  it("User should not be able to delete article when article not yours", (done) => {
+    chai.request(app).delete(`/api/v1/articles/${2}`)
+    .set('auth', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJlcmljNkBnbWFpbC5jb20iLCJpc2FkbWluIjpmYWxzZSwiaWF0IjoxNTY5OTY0OTkzfQ.NdgiZycbMVgp7NKADgaUJMwJhXOl7wFeLSCb_RLitkg')
+    .end((err, res) => {
+      res.should.have.status(403);
+      res.body.should.be.an("object");
+      done();
+    });
+  });
+  it("User should not be able to delete article when not found", (done) => {
+    chai.request(app).delete(`/api/v1/articles/${100000}`)
+    .set('auth', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJlcmljNkBnbWFpbC5jb20iLCJpc2FkbWluIjpmYWxzZSwiaWF0IjoxNTY5OTY0OTkzfQ.NdgiZycbMVgp7NKADgaUJMwJhXOl7wFeLSCb_RLitkg')
+    .end((err, res) => {
+      res.should.have.status(404);
+      res.body.should.be.an("object");
+      done();
+    });
+  });
 });
