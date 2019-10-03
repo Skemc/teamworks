@@ -121,6 +121,32 @@ class ArticleController{
     });
   }
 
+  static viewSpecificArticle(req, res) {
+    const { articleId } = req.params;
+    const logged = req.user.email;
+    const isEmployeeExist = users.find(a => a.email === logged);
+    const isArticleExist = articles.find(a=>a.id===parseInt(articleId));
+
+    if (!isEmployeeExist) {
+      return res.status(401).send({
+        status: 401,
+        error: 'Employee Not Exist in Our System'
+      });
+    }
+    if (!isArticleExist) {
+      return res.status(404).send({
+        status: 404,
+        error: 'Articles Not Found'
+      });
+    }
+    const { ...data } = isArticleExist;
+    return res.status(200).send({
+      status: 200,
+      message: "Article Successfully retrieved!",
+      data
+    });
+  }
+
 }
 
 export default ArticleController;
