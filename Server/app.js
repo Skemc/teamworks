@@ -11,6 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true}));
 app.use('/api/v1/auth', userRouter);
 app.use('/api/v1', articleRouter);
 
+
 const port = process.env.PORT || 2000;
 
 app.listen(port, ()=>{

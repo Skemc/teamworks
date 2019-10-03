@@ -39,6 +39,43 @@ class ArticleController{
       data
     });
   }
+  static editArticle(req, res) {
+    const { title, article } = req.body;
+    const { articleId } = req.params;
+    const logged = req.user.email;
+    const isArticleExist = articles.find(art => art.id === parseInt(articleId));
+    const isEdited = articles.find(a => a.title === title && a.article === article);
+    if (!isArticleExist) {
+      return res.status(404).send({
+        status: 404,
+        error: 'Article Not found'
+      });
+    } 
+    if (isArticleExist.authorId !== logged) {
+      return res.status(403).send({
+        status: 403,
+        error: 'Article Not Yours'
+      });
+    }
+    if (isEdited) {
+      return res.status(409).send({
+        status: 409,
+        error: 'Article is Already Edited'
+      });
+    }
+    const holder = new Array(isArticleExist);
+    const data = holder.map(a => {
+      a.title = title;
+      a.article = article;
+      return a;
+    }
+    );
+    return res.status(200).send({
+      status: 200,
+      message: "Edited successfully",
+      data
+    });
+  }
 }
 
 export default ArticleController;
