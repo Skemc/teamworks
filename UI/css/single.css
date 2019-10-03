@@ -1,0 +1,433 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background:#fff;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    position: relative;
+}
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.nav-bar{
+    display: flex;
+    position: sticky;
+    top: 0;
+    flex: 1;
+    align-items: center;
+    width: 100%;
+    background: white;
+    box-shadow: 2px 1px 6px;
+    opacity: .98;
+    z-index: 888888;
+    height: 66px;
+}
+.footer{
+    background:rgb(221, 96, 50);
+    box-shadow: 1px 2px 6px;
+    text-align: center;
+    font-size: 20px;
+    height: 50px;
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    padding-top: 20px;
+}
+.logo{
+    margin: 0 20px;
+    position: absolute;
+    height: 60px;
+}
+.links{
+    margin: 0 10px 0 auto;
+}
+.links ul li{
+    display: inline-block;
+    padding: 10px 20px;
+}
+.links ul{
+    float: right;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+.nav-bar .menu{
+    display: none;
+}
+.nav-bar .menu:hover{
+    color:  #4caf50;
+    transition: 0.5s;
+}
+
+.links li a{
+    color: rgb(221, 96, 50);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.links li a:hover{
+    color:  #4caf50;
+    border-radius: 5px;
+}
+.create-btn .write{
+    font-size: 40px;
+    text-decoration: none;
+
+}
+ .create-btn{
+    position: fixed;
+    background: #fff;
+    padding: 20px;
+    cursor: pointer;
+    top: 10%;
+    right: 1%;
+    font-size: 20px;
+    z-index: 888888;
+    margin: 4px 2px;
+    border-radius: 50% ;
+    text-decoration: none;
+    text-align: center;
+    border: solid rgb(221, 96, 50);
+}
+.create-btn:hover{
+    background:  rgb(221, 96, 50);
+}
+.create{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7) !important;
+    position: fixed;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 888888;
+ }
+ .article{
+     position: relative;
+     width: 600px;
+     height: 600px;
+     background-color: #fff;
+     border-radius: 9px;
+     left: 30%;
+     top: 12%;
+ }
+ .article h2{
+    font-size: 20px;
+    border-bottom: 2px solid rgb(221, 96, 50);
+    width: 480px;
+    margin-bottom: 50px;
+    padding: 13px 0;
+    position: absolute;
+    left: 3%;
+ }
+ .article .text-input{
+    border-radius: 3px;
+    position: absolute; 
+    width: 97%;
+    top: 7%;
+    left: 0.20rem;
+    font-size: 20px;
+}
+.article .text-input2{
+    border-radius: 3px;
+    width: 97%;
+    top: 55%;
+    left: 0.20rem;
+    font-size: 20px;
+}
+ .article label {
+     font-size: 20px;
+     color: rgb(221, 96, 50);
+     margin-bottom: 12px;
+     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ }
+ .article form{
+     position: absolute;
+     width: 80%;
+     top: 20%;
+     left: 8%;
+     height: 75%;
+ }
+
+ .article .btn {
+    position: absolute;
+    left: 13%;
+    width: 20%;
+    background:white;
+    border: 2px solid rgb(221, 96, 50);
+    border-radius: 15px;
+    color: black;
+    padding: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    top: 90%;
+}
+.article .btn:hover {
+    background: rgb(221, 96, 50);
+    color: white;
+}
+.article .btn-btn:hover {
+    background: red;
+    color: white;
+}
+
+.article .btn-btn {
+    position: absolute;
+    left: 65%;
+    width: 20%;
+    background:white;
+    border: 2px solid red;
+    border-radius: 15px;
+    color: black;
+    padding: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    top: 90%;
+    text-decoration: none;
+    text-align: center;
+
+}
+
+form div{
+    margin-bottom: 40px;
+}
+
+.page-wrapper{
+    height: 100%;
+    z-index: 88888;
+}
+.page-wrapper a{
+    text-decoration: none;
+    color: grey;
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.page-wrapper a:hover{
+    color: rgb(221, 96, 50);
+}
+
+.content{
+    width: 90%;
+    margin: 30px auto 30px;
+}
+.content .sidebar{
+    width: 25%;
+    height: 700px;
+    float: left;
+}
+
+.content .main-content.single{
+    padding: 20px 50px;
+    font-size: 1.1em;
+    float: left;
+    width: 65%;
+}
+.content .main-content.single .post-content p{
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    float: left;
+}
+.content .main-content.single .post-title{
+    text-align: center;
+    margin-right: 40px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    width: 85%;
+    float: left;
+    margin-bottom: 30px;
+}
+.content .popular{
+    margin-left: 10px;
+}
+.content .popular .post{
+    margin-top: 10px;
+    padding-top: 10px;
+
+}
+.content .popular .section-title{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    font-size: 30px;
+}
+
+.content .popular .post img{
+    height: 60px;
+    width: 70px;
+    float: left;
+    margin-right: 10px;
+}
+.content .post-comment{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 230px;
+}
+.content .post-comment textarea{
+    margin: 10px 20px;
+    width: 95%;
+    border: 2px solid rgb(221, 96, 50);
+}
+.content .post-comment .comment-btn{
+    position: absolute;
+    bottom: 10px;
+    right: 19px;
+    border: 2px solid rgb(221, 96, 50);
+    border-radius: 5px;
+    color: black;
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 120px;
+    background: #fff;
+}
+.content .post-comment .comment-btn:hover{
+    background: rgb(221, 96, 50);
+    color: #fff;
+}
+
+/* Responsiveness */
+
+/* Mobile */
+
+@media(max-width:425px){
+    .content .main-content.single .post-title{
+        text-align: center;
+        margin-right: 15px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: black;
+        font-size: 30px;
+        width: 100%;
+    }
+    .content .main-content.single .post-content p{
+        font-size: 18px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+   .content .main-content.single .post-content{
+       width: 85%;
+       margin-left: 3px !important;
+   }
+   .content .main-content.single{
+       width: 70% !important;
+   }
+    .content .sidebar{
+        width: 100%;
+        height: 700px;
+        float: left;
+    }
+    .article{
+        position: relative;
+        width: 330px !important;
+        height: 600px;
+        background-color: #fff;
+        border-radius: 9px;
+        left: 12%;
+        top: 15%;
+    }
+   #body{
+       width: 100%;
+   } 
+   .article .btn {
+    position: absolute;
+    left: 5%;
+    width: 40%;
+    background:white;
+    border: 2px solid rgb(221, 96, 50);
+    border-radius: 15px;
+    color: black;
+    padding: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    top: 90%;
+    }
+    .article .btn:hover {
+        background: rgb(221, 96, 50);
+        color: white;
+    }
+    .article .btn-btn:hover {
+        background: red;
+        color: white;
+    }
+
+    .article .btn-btn {
+        position: absolute;
+        right: 2px;
+        width: 27%;
+        background:white;
+        border: 2px solid red;
+        border-radius: 15px;
+        color: black;
+        padding: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        top: 90%;
+        text-decoration: none;
+        text-align: center;
+
+    }
+    .article h2{
+        font-size: 20px;
+        border-bottom: 2px solid rgb(221, 96, 50);
+        width: 300px;
+        margin-bottom: 50px;
+        padding: 13px 0;
+        position: absolute;
+        left: 3%;
+    }
+    .content .post-comment .comment-btn{
+        position: absolute;
+        right: 4px;
+    }
+    .content .post-comment textarea{
+        position: relative;
+        left: -18px !important;
+
+    }
+    .content .post-comment textarea style{
+        font-size: 25px;
+    }
+}
+
+/* Tablet */
+
+@media(max-width:768px){
+    .content .main-content.single .post-title{
+        text-align: center;
+        margin-left: 5px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: black;
+        font-size: 33px;
+        width: 100%;
+    }
+    .content .main-content.single .post-content p{
+        font-size: 23px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        width: 100%;
+    }
+    .content .main-content.single .post-content{
+        margin-left: 20px;
+        width: 100%;
+    }
+
+    .content .main-content.single{
+        width: 80%;
+    }
+    .content .sidebar{
+        width: 100%;
+        height: 700px;
+        float: left;
+    }
+    .article{
+        position: relative;
+        width: 600px;
+        height: 600px;
+        background-color: #fff;
+        border-radius: 9px;
+        left: 13%;
+        top: 7%;
+    }
+} 
+    
