@@ -102,6 +102,25 @@ class ArticleController{
     });
   }
 
+  static viewArticles(req, res) {
+    const { articleId } = req.params;
+    const logged = req.user.email;
+    const isEmployeeExist = users.find(a => a.email === logged);
+
+    if (!isEmployeeExist) {
+      return res.status(401).send({
+        status: 401,
+        error: 'Employee Not Exist in Our System'
+      });
+    }
+    const { ...data } = articles;
+    return res.status(200).send({
+      status: 200,
+      message: "Articles Successfully retrieved!",
+      data
+    });
+  }
+
 }
 
 export default ArticleController;
