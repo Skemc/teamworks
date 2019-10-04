@@ -2,11 +2,16 @@ import users from '../Models/user.model';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
+import userValidations from '../Helper/user.validation';
 
 dotenv.config();
 
 class UserController {
     static signup(req, res) {
+        const { error } = userValidations.validateSignup(req.body);
+        if (error){
+            return res.status(400).send({ status: 400, error: error.details[0].message });
+        }
         const isUserExist = users.find(user => user.email === req.body.email);
         if (isUserExist) {
             return res.status(409).send({
@@ -43,6 +48,10 @@ class UserController {
         })
     }
     static signin(req, res) {
+        const { error } = userValidations.validateSignin(req.body)
+        if (error){
+            return res.status(400).send({ status: 400, error: error.details[0].message });
+        }
         const isUserExist = users.find(user => user.email === req.body.email);
         if (!isUserExist) {
             return res.status(401).send({
