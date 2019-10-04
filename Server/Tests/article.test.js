@@ -16,6 +16,12 @@ const editDummy2 = {
   title: 'igjxcvnk',
   article: 'nkbjvjhm'
 }
+const comment = {
+  comment: 'jdfjdvalkff',
+}
+const comment1 = {
+  comment: 'fajflkafla'
+}
 describe("articles tests", () => {
 
   it("User should be able to create article when data are valid ", (done) => {
