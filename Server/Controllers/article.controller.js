@@ -1,6 +1,7 @@
 import users from '../Models/user.model';
 import articles from '../Models/article.model';
 import validateArticles from '../Helper/article.validations';
+import comments from '../Models/comment.model';
  
 class ArticleController{
   
@@ -101,6 +102,47 @@ class ArticleController{
       message: "Deleted successfully"
     });
   }
+
+  static commentOnArticle(req,res,next){
+    const { articleId } = req.params;
+    const logged = req.user.email;
+    const isEmployeeExist = users.find(a => a.email === logged);
+    const isCommentExist = comments.find(c=>c.comment===req.body.comment&&c.authorId===logged);
+    const isArticleExist = articles.find(art => art.id === parseInt(articleId));
+
+    if (!isArticleExist) {
+      return res.status(404).send({
+        status: 404,
+        error: 'Article Not Found'
+      });
+    }
+    if (!isEmployeeExist) {
+      return res.status(401).send({
+        status: 401,
+        error: 'Employee Not Exist in Our System'
+      });
+    }
+    if (isCommentExist) {
+      return res.status(409).send({
+        status: 409,
+        error: 'Article already commented by this User'
+      });
+    }
+    const data = {
+      commentId: comments.length+1,
+      articleTitle: isArticleExist.title,
+      article: isArticleExist.article,
+      authorId: logged,
+      comment: req.body.comment,
+      createdOn: new Date()
+    };
+    comments.push(data);
+    return res.status(200).send({
+      status: 200,
+      message: "Articles Successfully Commented!",
+      data
+    });
+}
 
   static viewArticles(req, res) {
     const { articleId } = req.params;
