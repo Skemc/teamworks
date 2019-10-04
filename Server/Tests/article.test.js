@@ -159,6 +159,36 @@ describe("articles tests", () => {
       done();
     });
   });
+  it("User should be able to comment on article", (done) => {
+    chai.request(app).post(`/api/v1/articles/${1}/comments`)
+    .set('auth', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJlcmljNkBnbWFpbC5jb20iLCJpc2FkbWluIjpmYWxzZSwiaWF0IjoxNTY5OTY0OTkzfQ.NdgiZycbMVgp7NKADgaUJMwJhXOl7wFeLSCb_RLitkg')
+    .send(comment)
+    .end((err, res) => {
+      res.should.have.status(200);
+      res.body.should.be.an("object");
+      done();
+    });
+  });
+  it("User should not be able to comment on article when already commented", (done) => {
+    chai.request(app).post(`/api/v1/articles/${1}/comments`)
+    .set('auth', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJlcmljNkBnbWFpbC5jb20iLCJpc2FkbWluIjpmYWxzZSwiaWF0IjoxNTY5OTY0OTkzfQ.NdgiZycbMVgp7NKADgaUJMwJhXOl7wFeLSCb_RLitkg')
+    .send(comment)
+    .end((err, res) => {
+      res.should.have.status(409);
+      res.body.should.be.an("object");
+      done();
+    });
+  });
+  it("User should not be able to comment on article when not found", (done) => {
+    chai.request(app).post(`/api/v1/articles/${10000}/comments`)
+    .set('auth', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJlcmljNkBnbWFpbC5jb20iLCJpc2FkbWluIjpmYWxzZSwiaWF0IjoxNTY5OTY0OTkzfQ.NdgiZycbMVgp7NKADgaUJMwJhXOl7wFeLSCb_RLitkg')
+    .send(comment1)
+    .end((err, res) => {
+      res.should.have.status(404);
+      res.body.should.be.an("object");
+      done();
+    });
+  });
   it("User should be able to view all article", (done) => {
     chai.request(app).get(`/api/v1/articles`)
     .set('auth', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJlcmljNkBnbWFpbC5jb20iLCJpc2FkbWluIjpmYWxzZSwiaWF0IjoxNTY5OTY0OTkzfQ.NdgiZycbMVgp7NKADgaUJMwJhXOl7wFeLSCb_RLitkg')
