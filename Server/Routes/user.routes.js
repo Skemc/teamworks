@@ -1,6 +1,6 @@
 import express from 'express';
-import UserController from '../Controllers/user.controller';
-import userValidations from '../Helper/user.validation';
+import UserController from '../controllers/user.controller';
+import userValidations from '../helpers/user.validation';
 
 const { validateSignup, validateSignin } = userValidations;
 

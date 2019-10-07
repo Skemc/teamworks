@@ -1,8 +1,8 @@
-import users from '../Models/user.model';
+import users from '../models/user.model';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
-import userValidations from '../Helper/user.validation';
+import userValidations from '../helpers/user.validation';
 
 dotenv.config();
 
