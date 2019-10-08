@@ -17,7 +17,8 @@ const createTable = async () => {
         gender TEXT NOT NULL,
         jobrole TEXT NOT NULL,
         department TEXT NOT NULL,
-        address TEXT NOT NULL
+        address TEXT NOT NULL,
+        iadmin BOOLEAN DEFAULT false
     )`;
      await pool.query(usersTables);
 }
