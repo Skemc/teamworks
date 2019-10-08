@@ -1,7 +1,7 @@
-import users from '../Models/user.model';
-import articles from '../Models/article.model';
-import validateArticles from '../Helper/article.validations';
-import comments from '../Models/comment.model';
+import users from '../models/user.model';
+import articles from '../models/article.model';
+import validateArticles from '../helpers/article.validations';
+import comments from '../models/comment.model';
  
 class ArticleController{
   

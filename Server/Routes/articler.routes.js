@@ -1,6 +1,6 @@
 import express from 'express';
-import articleController from '../Controllers/article.controller';
-import verifyUser from '../Middleware/auth';
+import articleController from '../controllers/article.controller';
+import verifyUser from '../middleware/auth';
 
 const router = express.Router();
 
