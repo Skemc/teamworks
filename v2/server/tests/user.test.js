@@ -9,8 +9,6 @@ chai.use(chaiHttp);
 chai.should();
 
 
-const password = process.env.password;
-
 describe("Signup tests", () => {
   
   it("User should be able to signup when data are valid ", (done) => {
@@ -116,10 +114,7 @@ describe('Signin tests', () => {
     });
   });
   it("should not be able to signin with wrong password ", (done) => {
-    chai.request(app).post("/api/v2/auth/signin").send({
-      email: mock.signins.email,
-      password : "Thvbjnklnkljbhj11"
-    }).end((err, res) => {
+    chai.request(app).post("/api/v2/auth/signin").send(mock.wrongPassword).end((err, res) => {
       res.should.have.status(401);
       res.body.should.be.an("object");
       done();
@@ -142,10 +137,7 @@ describe('Signin tests', () => {
     });
   });
   it("should not be able to signin with an unknown account", (done) => {
-    chai.request(app).post("/api/v2/auth/signin").send({
-        email: 'eric123@gmail.com',
-        password
-    }).end((err, res) => {
+    chai.request(app).post("/api/v2/auth/signin").send(mock.wrongAccount).end((err, res) => {
       res.should.have.status(401);
       res.body.should.be.an("object");
       done();

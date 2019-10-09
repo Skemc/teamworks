@@ -12,6 +12,17 @@ let mock = {
     signins: {
         email : "eric6@gmail.com",
         password: "Rwanda000" 
-    }   
+    },
+    wrongPassword: {
+        email: "eric6@gmail.com",
+        password : "Thvbjnklnkljbhj11"
+    },
+    wrongEmail: {
+
+    }, 
+    wrongAccount: {
+        email: 'eric123@gmail.com',
+        password: "Rwanda000" 
+    }  
 };
 export default mock;
