@@ -21,6 +21,8 @@ const createTable = async () => {
         iadmin BOOLEAN DEFAULT false
     )`;
      await pool.query(usersTables);
+const dummy= 
+    `INSERT INTO users(firstname, lastname, email, password, gender, address, jobrole, department) VALUES('Skemc','karek','eric6@gmail.com','$2b$10$hjXgNwYIzx8Hxeg.silh3usMzPF.TGMV3lMY55LACDhv19TnrtrMW','male','kigali','manager','it')`;
+    await pool.query(dummy);
 }
-
 createTable();
