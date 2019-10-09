@@ -13,7 +13,7 @@ class UserController {
         try{
         const { error } = userValidations.validateSignup(req.body);
         if (error){
-            return res.status(400).send({ status: 400, error: error.details[0].message });
+           throw new Error(error.details[0].message );
         }
         const { firstName, lastName, email, address, gender, jobRole, department } = req.body;
         const isUserExist = await executeQuery(queries[0].isUserExist, [email]);
@@ -57,7 +57,7 @@ class UserController {
         })
       }
       catch(err) {
-          return res.status(500).send({ status: 500, error: err.message})
+          return res.status(400).send({ status: 400, error: err.message})
       }
     }
     
