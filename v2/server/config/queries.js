@@ -11,6 +11,10 @@ let queries = [
         getArticle: `SELECT * FROM articles WHERE id=$1`,
         findArticle: `SELECT * FROM articles WHERE id=$1`,
         getAllArticle: `SELECT * FROM articles`
+    },
+    {
+        createComment: `INSERT INTO comments (articleTitle, article, authorid, comment) VALUES ($1,$2,$3,$4) RETURNING *`,
+        isCommentExist: `SELECT * FROM comments WHERE comment=$1 and authorid=$2`
     }
 ];
 export default queries;

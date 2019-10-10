@@ -10,5 +10,7 @@ router.patch('/articles/:articleId', verifyUser, articleController.editArticle);
 router.delete('/articles/:articleId', verifyUser, articleController.deleteArticle);
 router.get('/articles', verifyUser, articleController.viewArticles);
 router.get('/articles/:articleId', verifyUser, articleController.viewSpecificArticle);
+router.post('/articles/:articleId/comments', verifyUser, articleController.commentOnArticle);
+
 
 export default router;

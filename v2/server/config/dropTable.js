@@ -9,6 +9,7 @@ const pool = new Pool({
 });
 try{
     const dropTable = [
+	'DROP TABLE IF EXISTS comments CASCADE',
         'DROP TABLE IF EXISTS articles CASCADE',
         'DROP TABLE IF EXISTS users',
     ];
