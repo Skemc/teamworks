@@ -18,11 +18,19 @@ const createTable = async () => {
         jobrole TEXT NOT NULL,
         department TEXT NOT NULL,
         address TEXT NOT NULL,
-        iadmin BOOLEAN DEFAULT false
+        isadmin BOOLEAN DEFAULT false
+    )`;
+    const articleTable = `CREATE TABLE IF NOT EXISTS articles (
+        id SERIAL NOT NULL PRIMARY KEY,
+        title TEXT NOT NULL,
+        article TEXT NOT NULL,
+        createdon TIMESTAMP NOT NULL
     )`;
      await pool.query(usersTables);
-const dummy= 
-    `INSERT INTO users(firstname, lastname, email, password, gender, address, jobrole, department) VALUES('Skemc','karek','eric6@gmail.com','$2b$10$hjXgNwYIzx8Hxeg.silh3usMzPF.TGMV3lMY55LACDhv19TnrtrMW','male','kigali','manager','it')`;
-    await pool.query(dummy);
+     await pool.query(articleTable);
+
+     const firstUser = `INSERT INTO users(firstname,lastname, email, password, gender, jobrole, department,address, isadmin) VALUES('eric','karekezi', 'eric6@gmail.com', '$2b$10$hjXgNwYIzx8Hxeg.silh3usMzPF.TGMV3lMY55LACDhv19TnrtrMW', 'male','cooker', 'kitchen','gikondo','true')`;
+
+     await pool.query(firstUser);
 }
 createTable();

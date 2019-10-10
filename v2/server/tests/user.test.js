@@ -12,14 +12,6 @@ chai.should();
 describe("Signup tests", () => {
   
   it("User should be able to signup when data are valid ", (done) => {
-    chai.request(app).post("/api/v2/auh/signup").send(mock.signups).end((err, res) => {
-      res.should.have.status(405);  
-         
-      res.body.should.be.an("object");
-      done();
-    });
-  });
-  it("User should be able to signup when data are valid ", (done) => {
     chai.request(app).post("/api/v2/auth/signup").send(mock.signups).end((err, res) => {
       res.should.have.status(201);  
       res.body.should.be.an("object");
@@ -108,7 +100,8 @@ describe('Signin tests', () => {
 
   it("should be able to signin", (done) => {
     chai.request(app).post("/api/v2/auth/signin").send(mock.signins).end((err, res) => {
-      res.should.have.status(200);      
+      res.should.have.status(200);  
+          
       res.body.should.be.an("object");
       done();
     });
