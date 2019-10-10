@@ -10,7 +10,7 @@ const articles = [
     id: 2,
     title: 'ndngsds',
     article: 'ndnfdsds',
-    authorId: 'eric2@gmail.com',
+    authorId: 'erica80@gmail.com',
     createdOn: new Date()
   }
 ];

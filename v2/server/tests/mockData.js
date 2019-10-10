@@ -23,6 +23,10 @@ let mock = {
     }, 
     articles: {
         title: 'fjdbf',
+        article: 'vadvoodisvoan'
+    },
+    editArticle: {
+        title: 'keasins',
         article: 'jbfdd'
     }
 
