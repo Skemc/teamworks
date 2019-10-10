@@ -31,21 +31,67 @@ class ArticleController{
            const newArticle = [
              req.body.title,
              req.body.article,
+             loggedUser,
              new Date()
           ];
            const createdArticle = await executeQuery(query[1].createArticle, newArticle);
-           const { ...data } = createdArticle;
            return res.status(201).send({
              status: 201,
              message: "article created successfully",
-             data : {
-                 data
-             }
+             data : createdArticle[0]
            });
          }catch (error) {
             return res.status(400).send({ status: 400, error: error.message });
         } 
-    }  
+    }
+    
+  static async editArticle(req, res) {
+    const { title, article } = req.body;
+    const articleId= parseInt(req.params.articleId);
+    const logged = req.user.email;
+    const { error } = validateArticles.validateArticle(req.body);
+    try {
+      if (error){
+        throw new Error ( error.details[0].message );
+       }
+      const isArticleExist = await executeQuery(query[1].getArticle, [articleId]);
+      const isEdited = await executeQuery(query[1].isArticleExist, [req.body.title, req.body.article])
+       
+    if (isArticleExist.length === 0 ) {
+      return res.status(404).send({
+        status: 404,
+        error: 'Article Not found'
+      });
+    } 
+    if (isArticleExist[0].authorid !== logged) {
+      return res.status(403).send({
+        status: 403,
+        error: 'Article Not Yours'
+      });
+    }
+    
+    if (isEdited.length !== 0) {
+      return res.status(409).send({
+        status: 409,
+        error: 'Article is Already Edited'
+      });
+    }
+    const editedArticle = await executeQuery(query[1].editArticle, [title,article,articleId]);
+    return res.status(200).send({
+      status: 200,
+      message: "Edited successfully",
+      data: {
+        id: editedArticle[0].i,
+        title: editedArticle[0].title,
+        article: editedArticle[0].article,
+        authorid: editedArticle[0].authorid,
+        editedon: editedArticle[0].createdon
+      }
+    });
+    } catch (error) {
+      return res.status(400).send({ status: 400, error:error.message})
+    }
+  }
 }
 
 export default ArticleController;

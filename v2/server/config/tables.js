@@ -24,6 +24,7 @@ const createTable = async () => {
         id SERIAL NOT NULL PRIMARY KEY,
         title TEXT NOT NULL,
         article TEXT NOT NULL,
+        authorid TEXT NOT NULL,
         createdon TIMESTAMP NOT NULL
     )`;
      await pool.query(usersTables);
