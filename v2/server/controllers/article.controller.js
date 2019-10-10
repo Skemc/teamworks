@@ -178,6 +178,41 @@ class ArticleController {
       return res.status(400).send({ status: 400, error: error.message })
     }
   }
+
+  static async commentOnArticle(req,res,next){
+    const { articleId } = req.params;
+    const logged = req.user.email;
+    const { comment } = req.body;
+    const isCommentExist = await executeQuery(query[2].isCommentExist, [comment, logged])
+    
+    const isEmployeeExist = await executeQuery(query[0].isUserExist, [logged]);
+    const isArticleExist = await executeQuery(query[1].getArticle, [articleId]);
+
+    if (!isArticleExist[0]) {
+      return res.status(404).send({
+        status: 404,
+        error: 'Article Not Found'
+      });
+    }
+    if (!isEmployeeExist[0]) {
+      return res.status(401).send({
+        status: 401,
+        error: 'Employee Not Exist in Our System'
+      });
+    }
+    if (isCommentExist[0]) {
+      return res.status(409).send({
+        status: 409,
+        error: 'Article already commented by this User'
+      });
+    }
+    const data = await executeQuery(query[2].createComment, [isArticleExist[0].title,isArticleExist[0].article,logged, comment ]);
+    return res.status(200).send({
+      status: 200,
+      message: "Articles Successfully Commented!",
+      data
+    });
+  }
 }
 
 export default ArticleController;
