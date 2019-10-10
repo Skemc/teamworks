@@ -149,6 +149,35 @@ class ArticleController {
     }
 
   }
+  static async viewSpecificArticle(req, res) {
+    try {
+      const { articleId } = req.params;
+      const logged = req.user.email;
+      const isEmployeeExist = await executeQuery(query[0].isUserExist, [logged]);
+      const findOne = await executeQuery(query[1].getArticle, [articleId]);
+
+      if (!isEmployeeExist[0]) {
+        return res.status(401).send({
+          status: 401,
+          error: 'Employee Not Exist in Our System'
+        });
+      }
+      if (!findOne[0]) {
+        return res.status(404).send({
+          status: 404,
+          error: 'Articles Not Found'
+        });
+      }
+
+      return res.status(200).send({
+        status: 200,
+        message: "Article Successfully retrieved!",
+        data: findOne
+      });
+    } catch (error) {
+      return res.status(400).send({ status: 400, error: error.message })
+    }
+  }
 }
 
 export default ArticleController;
