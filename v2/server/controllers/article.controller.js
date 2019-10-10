@@ -94,7 +94,7 @@ class ArticleController {
   }
 
   static async deleteArticle(req, res) {
-  
+
     const articleId = parseInt(req.params.articleId);
     const logged = req.user.email;
     const { error } = validateArticles.validateArticle(req.body);
@@ -103,7 +103,7 @@ class ArticleController {
         throw new Error(error.details[0].message);
       }
       const isArticleExist = await executeQuery(query[1].getArticle, [articleId]);
-      
+
       if (isArticleExist.length === 0) {
         return res.status(404).send({
           status: 404,
@@ -116,7 +116,7 @@ class ArticleController {
           error: 'Article Not Yours'
         });
       }
-       await executeQuery(query[1].deleteArticle, [articleId]);
+      await executeQuery(query[1].deleteArticle, [articleId]);
       return res.status(200).send({
         status: 200,
         message: "Deleted successfully"
@@ -125,6 +125,29 @@ class ArticleController {
     catch (error) {
       return res.status(400).send({ status: 400, error: error.message })
     }
+  }
+  static async viewArticles(req, res) {
+
+    try {
+      const logged = req.user.email;
+      const isEmployeeExist = await executeQuery(query[0].isUserExist, [logged]);
+      const findAll = await executeQuery(query[1].getAllArticle);
+
+      if (!isEmployeeExist[0]) {
+        return res.status(401).send({
+          status: 401,
+          error: 'Employee Not Exist in Our System'
+        });
+      }
+      return res.status(200).send({
+        status: 200,
+        message: "Articles Successfully retrieved!",
+        data: findAll
+      });
+    } catch (error) {
+      return res.status(400).send({ status: 400, error: error.message })
+    }
+
   }
 }
 
