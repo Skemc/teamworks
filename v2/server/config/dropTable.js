@@ -10,6 +10,7 @@ const pool = new Pool({
 try{
     const dropTable = [
         'DROP TABLE IF EXISTS users CASCADE',
+        'DROP TABLE IF EXISTS articles CASCADE'
     ];
     const dropTables = async () => {
         for(const table of dropTable){

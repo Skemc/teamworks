@@ -3,26 +3,28 @@ let mock = {
         firstName: 'Skemc',
         lastName: 'karek',
         email: 'eric123@gmail.com',
-        password: '$2b$10$hjXgNwYIzx8Hxeg.silh3usMzPF.TGMV3lMY55LACDhv19TnrtrMW',
+        password: 'Rwanda000',
         address: 'Kigali',
         jobRole: 'manager',
         department: 'it',
         gender: 'male'
     },
     signins: {
-        email : "eric6@gmail.com",
+        email : "eric123@gmail.com",
         password: "Rwanda000" 
     },
     wrongPassword: {
-        email: "eric6@gmail.com",
+        email: "eric123@gmail.com",
         password : "Thvbjnklnkljbhj11"
     },
-    wrongEmail: {
-
-    }, 
     wrongAccount: {
-        email: 'eric123@gmail.com',
+        email: 'ydgafdgfadfteedeoicdic123@gmail.com',
         password: "Rwanda000" 
-    }  
+    }, 
+    articles: {
+        title: 'fjdbf',
+        article: 'jbfdd'
+    }
+
 };
 export default mock;
