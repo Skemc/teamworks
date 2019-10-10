@@ -31,8 +31,8 @@ const createTable = async () => {
      await pool.query(articleTable);
 
      const firstUser = `INSERT INTO users(firstname,lastname, email, password, gender, jobrole, department,address, isadmin) VALUES('eric','karekezi', 'eric6@gmail.com', '$2b$10$hjXgNwYIzx8Hxeg.silh3usMzPF.TGMV3lMY55LACDhv19TnrtrMW', 'male','cooker', 'kitchen','gikondo','true')`;
-
-    const firstArticle = `INSERT INTO articles(title, article, authorid) VALUES('yyy', 'yyy','eric6@gmail.com')`;
+     const firstArticle = `INSERT INTO articles(title, article, authorid) VALUES('yyy', 'yyy','eric6@gmail.com')`;
+     
      await pool.query(firstUser);
      await pool.query(firstArticle);
 }
