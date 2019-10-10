@@ -113,4 +113,24 @@ describe('delete article tests', () => {
     });
   });
 });
+describe('delete article tests', () => {
+it("User should be able to view all article", (done) => {
+    chai.request(app).get(`/api/v2/articles`)
+    .set('auth', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJlcmljNkBnbWFpbC5jb20iLCJpc2FkbWluIjpmYWxzZSwiaWF0IjoxNTY5OTY0OTkzfQ.NdgiZycbMVgp7NKADgaUJMwJhXOl7wFeLSCb_RLitkg')
+    .end((err, res) => {
+      res.should.have.status(200);
+      res.body.should.be.an("object");
+      done();
+    });
+  });
+  it("User should not be able to view all articles when user not registered" , (done) => {
+    chai.request(app).get(`/api/v2/articles`)
+    .set('auth', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoaEBnbWFpbC5jb20iLCJpc2FkbWluIjpmYWxzZSwiaWF0IjoxNTcwMTI4OTI4fQ.vdCwqW7O1BobuwtQa88m7S1D3wFK_50PfA5ft0lzXr8')
+    .end((err, res) => {
+      res.should.have.status(401);
+      res.body.should.be.an("object");
+      done();
+    });
+  });
+});
 
