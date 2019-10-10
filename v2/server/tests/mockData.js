@@ -28,6 +28,10 @@ let mock = {
     editArticle: {
         title: 'keasins',
         article: 'jbfdd'
+    },
+    deleteArticle: {
+        title: 'fjdbf',
+        article: 'vadvoodisvoan'
     }
 
 };
