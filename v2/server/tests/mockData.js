@@ -32,7 +32,14 @@ let mock = {
     deleteArticle: {
         title: 'fjdbf',
         article: 'vadvoodisvoan'
-    }
+    },
+     comment: {
+        comment: 'jdfjdvalkff',
+      },
+      comment1: {
+        comment: 'fajflkafla'
+      }
+      
 
 };
 export default mock;

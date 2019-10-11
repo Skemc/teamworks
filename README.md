@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/Skemc/teamworks.svg?branch=develop)](https://travis-ci.org/Skemc/teamworks)
 [![Coverage Status](https://coveralls.io/repos/github/Skemc/teamworks/badge.svg?branch=develop)](https://coveralls.io/github/Skemc/teamworks?branch=develop)
+[![Maintainability](https://api.codeclimate.com/v1/badges/f2c0954854588cb551ed/maintainability)](https://codeclimate.com/github/Skemc/teamworks/maintainability)
 
 # Teamwork
 Teamwork is an internal social network for employees in an organisation. The goal of this application is to facilitate more interaction between colleagues and facilitate team bonding. A teamwork environment promotes an atmosphere that fosters friendship and loyalty. These close-knit relationships motivate employees in parallel and align them to work harder, cooperate and be supportive of one another.

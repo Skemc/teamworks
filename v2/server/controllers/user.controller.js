@@ -102,7 +102,8 @@ class UserController {
             }
 
         } catch (error) {
-            return res.status(500).send({ status: 500, error: error.message});
+            return res.status(400).send({ status: 400, error: error.details[0].message });
+
         }
        
     }
